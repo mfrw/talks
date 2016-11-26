@@ -50,30 +50,18 @@
 % A subtitle is optional and this may be deleted
 \subtitle{emacs vs vim}
 
-\author{Muhammad Falak R~Wani
-%\inst{1}
-}
-% - Give the names in the same order as the appear in the paper.
-% - Use the \inst{?} command only if the authors have different
-%   affiliation.
+\author{Muhammad Falak R~Wani } 
 
 \institute[IIIT-D] % (optional, but mostly needed)
 {
-	\inst{}%
+	\inst{}
   Department of Computer Science\\
   IIIT-D
 }
-% - Use the \inst command only if there are several affiliations.
-% - Keep it simple, no one is interested in your street address.
 
 \date{ILUG-D, 2016}
-% - Either use conference name or its abbreviation.
-% - Not really informative to the audience, more for people (including
-%   yourself) who are reading the slides online
 
 \subject{Text Editors}
-% This is only inserted into the PDF information catalog. Can be left
-% out. 
 
 % If you have a file called "university-logo-filename.xxx", where xxx
 % is a graphic format that can be processed by latex or pdflatex,
@@ -110,8 +98,9 @@
 \subsection{History}
 
 \begin{frame}{It all started with \textbf{ed} ...}{Then came \textbf{ex}}
-It is not \textbf{VI} (roman \textbf{six}) but \textbf{`Wee Eyee'}.\\
-\pause
+	\textbf{do one thing, and do it well}
+	It is not \textbf{VI} (roman \textbf{six}) but \textbf{`Wee Eyee'}.\\
+	\pause
 	\begin{itemize}
 		\item {
 				\textbf{ed}: The basic editor.
@@ -127,13 +116,13 @@ It is not \textbf{VI} (roman \textbf{six}) but \textbf{`Wee Eyee'}.\\
 				\textbf{ex}: Improved and rewritten ed.
 				\pause
 			}
-					\item {
+		\item {
 				\textbf{vi}: Visual mode in ex.
 				\pause
 			}
-					\item {
+		\item {
 				\textbf{vim}: Improved and rewritten vi.
-				
+
 			}
 	\end{itemize}
 \end{frame}
@@ -142,52 +131,217 @@ It is not \textbf{VI} (roman \textbf{six}) but \textbf{`Wee Eyee'}.\\
 
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
-\begin{frame}{How to quit...}%{Insert latter}
-vi is a \textbf{modal} editor. \\
-You will benefit if you touch type.\\
+\begin{frame}{How to quit...}
+	vim is a \textbf{modal} editor. \\ \pause
+	You will benefit if you touch type.\\ \pause
 	\begin{itemize}
 		\item {
-				
-				%    \pause % The slide will pause after showing the first item
-			}
-		\item {   
-			Second item.
+				\textbf{normal}: The default mode.
+				\pause
+				}
+			\item {   
+				\textbf{insert}: The insert mode.
+				\pause
 			}
 			% You can also specify when the content should appear
 			% by using <n->:
 			%  \item<3-> {
 		\item {
-			Third item.
+				\textbf{ex}: The ex mode.
+				\pause
 			}
-		%\item<4-> {
+	\end{itemize}
+	How to get \alert{help }?\\ \pause
+	In normal mode \textbf{:help}
+	\alert(vimtutor) if you want an online tutorial
+\end{frame}
+
+\subsection{Power Usage}
+\begin{frame}{Power Usage}{merely scratching the surface}
+	vim is a very \textbf{powerful} editor \pause
+	\begin{itemize}
+			\item {
+					\textbf{movement}: Awkward at first.
+					\pause
+					}
+			\item {
+					\textbf{windows}: Spliting windows and movement.
+					\pause
+					}
+			\item {
+					\textbf{tabs}: Moving around in tabs.
+					\pause
+					}
+			\item {
+					\textbf{indentation}: Indenting code.
+					\pause
+					}
+			\item {
+					\textbf{autocomplete}: Dial \textbf{x} for completion.
+					\pause
+					}
+			\item {
+					\textbf{compilation}: Find errors quickly. (\textit{colder, cnewer})
+					\pause
+					}
+			\item {
+					\textbf{man}: go to a specific manual page without leaving vim
+					\pause
+					}
+			\item {
+					\textbf{ctags}: move around code efficently.
+					\pause
+					}
+			\item {
+					\textbf{cscope}: yet another way of moving around code.
+					}
+
+	\end{itemize}
+\end{frame}
+\begin{frame}{Plugins}{extensibility - community}
+	vim has a huge collection of third party plugins.. \pause
+	\begin{itemize}
 		\item {
-				Fourth item.
+				\textbf{pathogen}: A plugin for easy installation of other plugins
+				\pause
+				}
+		\item {
+				\textbf{NERDTree}: Explore your project.
+				\pause
+				}
+		\item {
+				\textbf{youcompleteme}: Autocompleteion.
+				\pause
+				}
+		\item {
+				\textbf{SuperTab}: Yet another Autocompleteion plugin.
+				\pause
+				}
+		\item {
+				\textbf{fugitive}: A git wrapper for vim
+				\pause
+				}
+	\end{itemize}
+	Easiest way to install is by \alert{pathogen}\\
+	Just modify the vimrc \textbf{execute pathogen\#infect()}
+\end{frame}
+
+\section{emacs}
+
+\subsection{History}
+\begin{frame}{Written by \textbf{rms}...}{\textbf{Richard M Stallman}}
+	\textbf{Do everything philosophy} \pause
+	\pause
+	\begin{itemize}
+		\item {
+				\textbf{EMACS}: \alert{E}\textit{diting} \alert{MAC}\textit{ros}\alert{S}
+				\pause
+
 			}
-			% or you can use the \uncover command to reveal general
-			% content (not just \items):
 		\item {
-		%\item<5-> {
-				Fifth item. %\uncover<6->{Extra text in the fifth item.}
+				Written in \textbf{C} and provides \textbf{lisp}.
+				\pause
+
+			}
+		\item {
+				It is self-documenting.
+				\pause
+			}
+		\item {
+				Church of Emacs
+				\pause
+			}
+		\item {
+				Editor War, the longest running flame war on internet. (who's the best)
+
 			}
 	\end{itemize}
 \end{frame}
 
-\section{Second Main Section}
+\subsection{Survival Skills}
+\begin{frame}{How to quit...}
+	It is not an \textbf{editor} but an\textbf{`Operating System'}, which happens to edit too.\\
+	Emacs has \textbf{modes} which alter the meaning of commands. \\
+	Emacs commands are elaborate sequence, called \alert{chords}. They are very confusing to startoff with.
+	\begin{itemize}
+		\item {
+			\textbf{C-x}: The most used chords, they are used frequently.
+			\pause
+			}
 
-\subsection{Another Subsection}
+		\item {   
+			\textbf{M-x}: The extended chords, or functions typically.
+			\pause
 
-\begin{frame}{Blocks}
-	\begin{block}{Block Title}
-		You can also highlight sections of your presentation in a block, with it's own title
-	\end{block}
-	\begin{theorem}
-		There are separate environments for theorems, examples, definitions and proofs.
-	\end{theorem}
-	\begin{example}
-		Here is an example of an example block.
-	\end{example}
+			}
+		\item {
+			\textbf{Major Mode}: What are you doing.
+			\pause
+			}
+		\item {
+			\textbf{Minor Mode}: Extension to the major-mode
+			\pause
+			}
+	\end{itemize}
+	How to get \alert{help }?\\ \pause
+	emacs is a self documenting editor
+	\textbf{C-h m} mode-specific help.
+	\textbf{C-h f} describe a function.
+	\textbf{C-h k} describe a function a key runs.
+	\textbf{M-x help} interactive help.
+
 \end{frame}
 
+\subsection{Power Usage}
+\begin{frame}{Power Usage}{merely scratching the surface}
+	vim is a very \textbf{powerful} editor \pause
+	\begin{itemize}
+			\item {
+					\textbf{movement}: Awkward at first.
+					\pause
+					}
+			\item {
+					\textbf{buffers}: Open files and \textit{not} files.
+					\pause
+					}
+			\item {
+					\textbf{windows}: Spliting windows and movement.
+					\pause
+					}
+			\item {
+					\textbf{frames}: Moving around in frames
+					\pause
+					}
+			\item {
+					\textbf{indentation}: Indenting code.
+					\pause
+					}
+			\item {
+					\textbf{autocomplete}: autocomplete-mode
+					\pause
+					}
+			\item {
+					\textbf{compilation}: Find errors quickly. (\textit{M-x compile})
+					\pause
+					}
+			\item {
+					\textbf{debugging}: Run a debugger inside emacs. (\textit{M-x gdb})
+					\pause
+					}
+			\item {
+					\textbf{man}: go to a specific manual page without leaving emacs
+					\pause
+					}
+			\item {
+					\textbf{ctags}: move around code efficently.
+					\pause
+					}
+			\item {
+					\textbf{cscope}: yet another way of moving around code.
+					}
+
+	\end{itemize}
+\end{frame}
 % Placing a * after \section means it will not show in the
 % outline or table of contents.
 \section*{Summary}
