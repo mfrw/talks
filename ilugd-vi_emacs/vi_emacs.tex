@@ -93,12 +93,12 @@
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
-\section{VIM}
+\section{vim}
 
 \subsection{History}
 
 \begin{frame}{It all started with \textbf{ed} ...}{Then came \textbf{ex}}
-	\textbf{do one thing, and do it well}
+	\textbf{do one thing, and do it well}\\ \pause
 	It is not \textbf{VI} (roman \textbf{six}) but \textbf{`Wee Eyee'}.\\
 	\pause
 	\begin{itemize}
@@ -152,8 +152,8 @@
 			}
 	\end{itemize}
 	How to get \alert{help }?\\ \pause
-	In normal mode \textbf{:help}
-	\alert(vimtutor) if you want an online tutorial
+	In normal mode \textbf{:help}\\
+	\alert{vimtutor} if you want an online tutorial
 \end{frame}
 
 \subsection{Power Usage}
@@ -230,7 +230,7 @@
 
 \subsection{History}
 \begin{frame}{Written by \textbf{rms}...}{\textbf{Richard M Stallman}}
-	\textbf{Do everything philosophy} \pause
+	\textbf{Do everything philosophy} \\
 	\pause
 	\begin{itemize}
 		\item {
@@ -294,7 +294,7 @@
 
 \subsection{Power Usage}
 \begin{frame}{Power Usage}{merely scratching the surface}
-	vim is a very \textbf{powerful} editor \pause
+	It takes some time to master emacs \pause
 	\begin{itemize}
 			\item {
 					\textbf{movement}: Awkward at first.
@@ -342,28 +342,62 @@
 
 	\end{itemize}
 \end{frame}
+\begin{frame}{Plugins}{extensibility - community}
+	emacs has everything but the kitchen sink. \pause
+	\textbf{melpa} is the emacs repository for plugins.
+	\begin{itemize}
+		\item {
+				\textbf{auto-complete}: auto completion. (builtin)
+				\pause
+				}
+		\item {
+				\textbf{company-mode}: better auto-complete.
+				\pause
+				}
+		\item {
+				\textbf{projectile}: View your projects.
+				\pause
+				}
+		\item {
+				\textbf{js2-mode}: javascript mode, best of the best.
+				\pause
+				}
+		\item {
+				\textbf{magit}: A git wrapper for emacs
+				\pause
+				}
+		\item{
+				\textbf{web-mode}: major mode for all html templates.
+				\pause
+				}
+	\end{itemize}
+	Installation is just calling a function \textbf{M-x package-list-packages}\\
+\end{frame}
 % Placing a * after \section means it will not show in the
 % outline or table of contents.
 \section*{Summary}
 
-\begin{frame}{Summary}
+\begin{frame}{Take Aways}
 	\begin{itemize}
 		\item
-			The \alert{first main message} of your talk in one or two lines.
+			Both \textbf{emacs \& vim} are \alert{very powerful} editors. 
 		\item
-			The \alert{second main message} of your talk in one or two lines.
+			\alert{Invest} some time to learn them, you will not regret it.
 		\item
-			Perhaps a \alert{third message}, but not more than that.
+			In appropriate hands both can \alert{shred} text at speed of thought.
+		\item 
+			Don't get involved in flame wars, exploit the best of both the worlds.
 	\end{itemize}
 
+	\pause
 	\begin{itemize}
 		\item
-			Outlook
+			I barely illustrated a mere 1\% of the power of these beasts. \pause
 			\begin{itemize}
 				\item
-					Something you haven't solved.
+					Manuals are your friends. \pause
 				\item
-					Something else you haven't solved.
+					I am feeling lucky, try it.
 			\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -383,20 +417,19 @@
 			\beamertemplatebookbibitems
 			% Start with overview books.
 
-		\bibitem{Author1990}
-			A.~Author.
-			\newblock {\em Handbook of Everything}.
-			\newblock Some Press, 1990.
+		\bibitem{DN}
+			Drew~Neil.
+			\newblock {\em Practical Vim}.
+			\newblock The Pragmaitc Programmers, 2012.
 
 
-			\beamertemplatearticlebibitems
+			\beamertemplatebookbibitems
 			% Followed by interesting articles. Keep the list short. 
 
-		\bibitem{Someone2000}
-			S.~Someone.
-			\newblock On this and that.
-			\newblock {\em Journal of This and That}, 2(1):50--100,
-			2000.
+		\bibitem{RMS}
+			Richard M~Stallman et al.
+			\newblock {\em GNU Emacs Manual}.
+			\newblock Free Software Foundation, 2014.
 	\end{thebibliography}
 \end{frame}
 
