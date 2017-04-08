@@ -1,0 +1,326 @@
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\documentclass{beamer}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+\usepackage{textcomp}
+\usepackage{graphicx}
+
+\pgfdeclareimage[height=0.6cm]{university-logo}{iiitd-logo.png}
+
+
+\title[Tor Perf \& Sec]{Tor Performance and Security}
+
+% A subtitle is optional and this may be deleted
+\subtitle{Can we be anonymous at scale ?}
+
+\author{Muhammad F. R.~Wani}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[IIIT-D] % (optional, but mostly needed)
+{
+  Department of Computer Science \\
+  
+  Indraprashta Institute \textit{of} \\
+  Information Technology Delhi\\
+}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\date[RM5XX -- April 2017]{Term Paper Presentation, April 2017}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Anonimity on Internet}
+\logo{\pgfuseimage{university-logo}}
+
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Section and subsections will appear in the presentation overview
+% and table of contents.
+\section{Basics}
+
+\subsection{Introduction}
+
+\begin{frame}{Tor}{What is Tor ?}
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+  \begin{itemize}
+  \item {The Tor network gives anonymity}
+  \item {Its a type of low latency network}
+  \item {Its the most commonly used service}
+  \item {Comparatively easy to setup and use}
+  \item {Require at-least 3 hops}
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+   \includegraphics[width=\textwidth]{tor} 
+  \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}{Tor Design}{How does it work ?}
+\begin{columns}[T]
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+    \item   Over 6000+ routers called OR's 
+    \item  Build a circuit and expose over socks proxy
+    \item 10 min circuit idle time.
+    \item Has A queuing architecture.
+    \item Round robin for circuit scheduling.
+    \item Randomly choose Routers.
+\end{itemize}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth]{tor2}\\
+Basic Tor Network\footnotemark
+\footnotetext{Image Scraped from Internet}
+
+\end{column}
+\end{columns}  
+\end{frame}
+\subsection{Background}
+
+% You can reveal the parts of a slide one at a time
+% with the \pause command:
+\begin{frame}{Design Weakness}{What's wrong ?}
+  \begin{itemize}
+  \item Tor is not scalable
+  \item Some attacks are possible without full circuit control
+  \item Transport design is an attack vector.
+  \item No congestion control
+\item Expensive circuit creation time.
+  \end{itemize}
+\end{frame}
+
+
+\subsection{Motivation}
+\begin{frame}{Classification of studies}{What's new and old !}
+\begin{columns}[T]
+  \begin{column}{0.5\textwidth}
+
+  \begin{itemize}
+      \item Traffic Management
+      \item Router Selection
+      \item Scalability
+      \item Circuit Construction
+  \end{itemize}
+  \end{column}
+  \begin{column}{0.5\textwidth}
+  \includegraphics[scale=0.4]{research-2}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\section{Enhancements}
+
+
+\subsection{Traffic Management}
+\begin{frame}{Traffic Management}{Improving scheduling of traffic}
+\begin{columns}[c]
+  \begin{column}{0.5\textwidth}
+\begin{itemize}
+    \item Incentive-based Schemes.
+    \item Multi-path routing.
+    \item Congestion Control.
+\end{itemize}
+\alert{Some important works:}
+\begin{itemize}
+    \item TCP over DTLS
+    \item KIST
+    \item UDP-OR
+    \item uTOR
+\end{itemize}
+\end{column}
+  \begin{column}{0.5\textwidth}
+  \includegraphics[scale=.25]{traffic}
+  \end{column}
+\end{columns} 
+\end{frame}
+
+\subsection{Router Selection}
+\begin{frame}{Router Selection}
+    \begin{itemize}
+    \item Tuneable Selection
+    \item Link-Based Selection
+    \item LasTOR
+    \item Congestion-aware Routing
+    \item Comprehensive Evalauation.
+    \end{itemize}
+    
+\end{frame}
+\subsection{Scalability}
+\begin{frame}{Scalability}
+\begin{columns}
+  \begin{column}{0.4\textwidth}
+    \begin{itemize}
+        \item Peer-to-Peer Approaches
+        \item PIR-Tor
+    \end{itemize}
+\end{column}
+  \begin{column}{0.6\textwidth}
+  \includegraphics[scale=1]{scalable}
+
+\end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Circuit Construction}
+\begin{frame}{Circuit Construction}
+\begin{itemize}
+   \item Improved Diffie-Hellman Based Key Agreement.
+   \item Pairing Based Onion Routing.
+   \item Certificateless Onion Routing.
+\end{itemize}
+\end{frame}
+
+\section{Attacks \& Issues}
+\subsection{Taxanomy of attacks}
+\begin{frame}{Attacks}
+\begin{itemize}
+   \item Passive Attacks
+   \begin{itemize}
+       \item AS-Level Adversary
+       \item Website Fingerprinting
+       
+   \end{itemize}
+   \item Active Attacks
+   \begin{itemize}
+       \item End to End Confirmation Attacks
+       \item Path Selection Attacks
+       \item Side Channel Attacks
+   \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Issues}
+
+\begin{frame}{Unresolved Issues}
+
+\begin{itemize}
+\item Bot-nets
+\item Blocking Resistance
+\item Performance
+\end{itemize}
+\end{frame}
+
+\section*{Summary}
+\begin{frame}{Takeaways}
+
+\begin{itemize}
+\item Identification of key weakness of TOR.
+\item Classification of research work.
+\item Survey in each of the category of research.
+
+\end{itemize}
+\end{frame}
+
+\section*{Questions}
+
+\begin{frame}{Questions}
+\centering
+\includegraphics[scale=1]{questions}
+\end{frame}
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+    
+  \beamertemplatebookbibitems
+  % Start with overview books.
+
+ 
+    
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+  \bibitem{TOR}
+    Tor Website.
+    \newblock{\em www.torproject.org}
+  \end{thebibliography}
+\end{frame}
+
+\end{document}
