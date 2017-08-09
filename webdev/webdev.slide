@@ -8,12 +8,12 @@ falak16018@iiitd.ac.in
 * Agenda
 
 - HTTP
-- Static Sites
 - GET
 - POST
+- Web Servers
+- Static Sites
 - Dynamic Sites
 - Role of Linux/Unix
-- Web Servers
 - Web Frameworks
 - Some Real World Case Studies
 - Choices For Deployment (python, node.js, golang)
@@ -51,6 +51,16 @@ It's not a language, but markup.
 .code src/hello.html
 Its a static blob of text which your browser can fetch and render
 
-* Form 
+* Web Servers
 
+A piece of software that listens on a port and serves clients
 
+ Default is 80/443 http/https
+
+- Apache
+- Lighttpd
+- nginx
+- Python
+- golang ... etc etc
+
+ By default they serve index.htm[l]
