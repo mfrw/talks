@@ -1,0 +1,56 @@
+Working with The WEB
+It's !tutorial;
+
+Muhammad Falak R Wani
+http://github.com/mfrw/talks/webdev
+falak16018@iiitd.ac.in
+
+* Agenda
+
+- HTTP
+- Static Sites
+- GET
+- POST
+- Dynamic Sites
+- Role of Linux/Unix
+- Web Servers
+- Web Frameworks
+- Some Real World Case Studies
+- Choices For Deployment (python, node.js, golang)
+
+ This course has no language constraint.
+
+* HTTP
+
+A simple Text Based protocol
+
+- Server
+- Client
+
+*Client:* Initiates a _request_
+*Server:* Responds with a _response_
+
+.image images/http.png
+
+* GET
+
+ www.iiitd.ac.in
+
+.image images/get.png _ 950
+
+* POST
+
+When we login in iiitd
+
+.image images/post.png _ 950
+
+
+* HTML
+
+It's not a language, but markup. 
+.code src/hello.html
+Its a static blob of text which your browser can fetch and render
+
+* Form 
+
+
