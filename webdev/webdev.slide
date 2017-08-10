@@ -53,7 +53,7 @@ Its a static blob of text which your browser can fetch and render
 
 * Web Servers
 
-A piece of software that listens on a port and serves clients
+Listen on a port and serves webpages
 
  Default is 80/443 http/https
 
@@ -61,6 +61,23 @@ A piece of software that listens on a port and serves clients
 - Lighttpd
 - nginx
 - Python
+- node.js
 - golang ... etc etc
 
  By default they serve index.htm[l]
+
+* Static Sites
+
+Demo time
+
+- Apache
+- Lighttpd
+- nginx
+.image images/nginx.png
+
+* Dynamic Websites
+
+- Python
+- node.js
+- golang
+.image images/nodejs.jpeg 400 _
