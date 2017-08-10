@@ -1,0 +1,64 @@
+%%% AUTHORS %%%
+
+\newcommand{\kumar}{Kumar et al.\xspace}
+
+%%% SYTEMS %%%
+
+\newcommand{\mpsoc}{MPSoC\xspace}
+\newcommand{\soc}{Keystone-II Hawking MPSoC\xspace}
+\newcommand{\hcti}{HC-K2H\xspace}
+\newcommand{\newrt}{U-RT\xspace}
+\newcommand{\energy}{\emph{energy}\xspace}
+\newcommand{\perf}{\emph{perf}\xspace}
+
+%%% BENCHMARKS %%%
+
+%%% FIX INFO %%%
+
+\newcommand{\fix}[2]{
+        {\textcolor{red}{\\\bf #1:~\emph{ #2}\\}}
+}
+%\newcommand{\comment}[2]{\begin{quote}\textsf{\bf #1:} #2\end{quote}}
+%\newcommand{\vivek}[1]{\comment{Vivek}{#1}}
+
+%%% hyperreferences %%%
+
+\newcommand{\doi}[1]{doi:~\href{http://dx.doi.org/#1}{\Hurl{#1}}}
+
+%
+% abbreviations
+%
+
+\newcommand{\eg}{e.g. }
+\newcommand{\ie}{i.e., }
+\newcommand{\etal}{et al. }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stuff for pretty printing the source code using listings.sty
+%
+
+\lstloadlanguages{java}
+\lstset{
+  numbers=left,
+  numberstyle=\tiny\sffamily,
+  stepnumber=1,
+  numbersep=1em,
+  language=java,                         % the language
+  basicstyle=\scriptsize\ttfamily,     % the basic font family to use
+  commentstyle=\scriptsize\it\ttfamily,% the font for comments
+  stringstyle=\ttfamily,
+  escapechar={\$},
+  morekeywords={async, task, firstprivate, single, finish, pragma, for, omp, parallel, schedule,
+  perf, energy, data, from,  map, target, to}
+}
+
+% This command allows us to conviniently put java text inline.
+%\newcommand{\textjava}[1]{{\lstset{basicstyle=\ttfamily}\lstinline@#1@}}
+\DeclareRobustCommand{\textjava}[1]{{\lstset{basicstyle=\ttfamily}\lstinline@#1@}}
+\newcommand{\cnull}{\textjava{NULL}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% End:
