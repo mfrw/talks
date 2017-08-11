@@ -1,4 +1,4 @@
-Working with The WEB
+Infrastucture of The WEB
 It's !tutorial;
 
 Muhammad Falak R Wani
@@ -44,12 +44,45 @@ When we login in iiitd
 
 .image images/post.png _ 950
 
-
 * HTML
 
 It's not a language, but markup. 
 .code src/hello.html
 Its a static blob of text which your browser can fetch and render
+
+* HTML Forms
+
+The most basic way of getting information.
+
+- POST METHOD
+- GET METHOD
+
+.code -edit src/form.html
+
+* GET Example
+
+Lets send a string to a webserver via telnet
+
+.code src/telnet.txt
+* IIITD Login
+
+What if we were able to use what we learnt into something productive
+
+.image images/iiitd_form.png
+
+- Send a *GET* Request to _google.com_
+- If the response contains any trace of *IIIT-Delhi*
+- Extract the *magic* number
+- Reply with the magic number + username + password
+- Print *Logout* url
+
+* IIITD Login code (golang)
+
+.code -numbers src/login.go
+
+* IIITD Login code (python2)
+
+.code -numbers src/login.py
 
 * Web Servers
 
@@ -75,9 +108,56 @@ Demo time
 - nginx
 .image images/nginx.png
 
+* Docker Demo
+
+* nginx 
+
+ docker run -i -t -v $PWD:/usr/share/nginx/html -p 80:80 nginx
+
+- -i -t : Bind an interactive terminal
+- -v    : Share a present directory in the container
+- -p    : expose a port from the container to the host machine
+- nginx : The name of the image to run
+
+ You could also install this natively
+
 * Dynamic Websites
 
 - Python
 - node.js
 - golang
 .image images/nodejs.jpeg 400 _
+
+* Using other Langugaes
+
+For python2 to start a web server
+
+ python2 -m SimpleHTTPServer 8080
+
+For python3 to start a web server
+
+ python3 -m http.server  8080
+
+
+* Simple Webserver in golang
+
+Languages such as Python, ruby, golang etc have web-servers inbuilt
+
+By far the most high performant is for *golang*
+
+.code -edit -numbers src/webserver.go
+
+* Simple Webserver in node.js
+
+.code src/webserver.js
+
+* For Next Time
+
+- Real Web Devlopment
+- Using Python, node.js, golang
+- Using web frameworks like Django, express ...
+- Introduction to AWS, Google AppEngine, Heroku
+- Details about the VM setup.
+- Databases
+- Caching
+- Load Balancing
