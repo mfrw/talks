@@ -1,0 +1,20 @@
+mfrw ➜  ~ telnet www.google.com 80
+Trying 172.217.26.164...
+Connected to www.google.com.
+Escape character is '^]'.
+GET / http/1.0
+Host: www.google.com
+
+HTTP/1.0 400 Bad Request
+Content-Type: text/html; charset=UTF-8
+Referrer-Policy: no-referrer
+Content-Length: 1555
+Date: Fri, 11 Aug 2017 06:29:12 GMT
+
+<!DOCTYPE html>
+<html lang=en>
+  <meta charset=utf-8>
+    <meta name=viewport content="initial-scale=1, minimum-scale=1, width=device-width">
+      <title>Error 400 (Bad Request)!!1</title>
+        <style>
+.........
