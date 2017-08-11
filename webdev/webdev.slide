@@ -2,7 +2,7 @@ Infrastucture of The WEB
 It's !tutorial;
 
 Muhammad Falak R Wani
-http://github.com/mfrw/talks/webdev
+https://github.com/mfrw/talks/tree/master/webdev
 falak16018@iiitd.ac.in
 
 * Agenda
@@ -78,7 +78,7 @@ What if we were able to use what we learnt into something productive
 
 * IIITD Login code (golang)
 
-.code -numbers src/login.go
+.play -numbers src/login.go
 
 * IIITD Login code (python2)
 
@@ -145,11 +145,35 @@ Languages such as Python, ruby, golang etc have web-servers inbuilt
 
 By far the most high performant is for *golang*
 
-.code -edit -numbers src/webserver.go
+.play -edit -numbers src/webserver.go
 
 * Simple Webserver in node.js
 
 .code src/webserver.js
+
+* Hello World WebApp in golang
+
+- Create a listener
+- Register url handlers
+
+.play -numbers src/echo.go
+
+* Project
+
+- A secure Banking application
+- Details will be shared comming monday
+- Focus on security rather than web
+- We are planning to have Milestones
+
+* VM's
+
+- Open for discussion
+- Plan is to provide a bare-bones VM
+- Get the infrastucture working
+- Build the app
+- Your peers test your implementation
+- Defensive/Offensive Security
+
 
 * For Next Time
 
