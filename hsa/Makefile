@@ -1,9 +1,6 @@
 all: hsa.pdf
 
-hsa.pdf: $(wildcard *.tex) hsa.bib
-	pdflatex hsa.tex
-	bibtex hsa
-	pdflatex hsa.tex
+hsa.pdf: $(wildcard *.tex)
 	pdflatex hsa.tex
 
 clean:
