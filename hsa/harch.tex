@@ -1,0 +1,45 @@
+\section{Heterogenous System Archtecture}
+
+HSA provides a unified view of fundamental computing elements. It defines two
+main units of execution.
+
+\begin{itemize}
+
+    \item LCU : Latency Compute Units (CPUs) \\
+    LCU is a generalization of a CPU, supporting both its native CPU ISA and HSA intermediate language.
+    \item TCU : Throughput Compute Units (GPUs) \\
+    TCU is a generalization of a GPU, supporting only the HSA intermediate language, and acts as a slave of the LCU.
+    
+\end{itemize}
+
+Seamless integration of the application across both LCU and TPU realizes better
+performance. GPUs have transitioned from pure graphics workloads to more
+general workloads supported by OpenCL, CUDA and DirectCompute. HSA makes it
+easy for the programmer to leverage both compute units, boosting productivity
+and also performance.
+
+\subsection{Goals}
+
+As HSA provides a unified programming platform, some of its noteable goals are as :
+
+\begin{itemize}
+
+    \item Removing CPU/GPU programmability barrier.
+    \item Reducing CPU/GPU communication latency.
+    \item Inclusion of additional processing elements such as DSPs, FPGAs transparently in the programming model.
+
+\end{itemize}
+
+\subsection{Features}
+Prominent archtectural features of HSA are:
+
+\begin{itemize}
+
+    \item Shared Page Table Support.
+    \item User Level Command Queing.
+    \item Hardware Scheduling.
+    \item Uniform and Coherent memory regions.
+    \item Unified Programming Model
+    \item Unified Address Space
+
+\end{itemize}
