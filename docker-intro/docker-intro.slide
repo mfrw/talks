@@ -1,0 +1,80 @@
+Docker
+Why should I care ?
+
+Muhammad Falak R Wani
+https://github.com/mfrw/talks/tree/master/docker-intro
+falak16018@iiitd.ac.in
+
+
+* I assume no prior knowledge whatsoever.
+
+* Agenda
+
+- Part 0: *Foundations*
+- Part I: *Basics*
+- Part II: *Intermediate*
+- Part III: *Black-Belt*
+
+Starting with first principle
+
+* Foundations
+
+Building the Ground 
+
+- Linux Architecture
+- Role Of the Kernel
+- Role Of the User-Space
+- Virtualization Techniques
+- Using Chroot
+- Using Qemu
+- Analogy of virtualenv (Python)
+
+* Basics
+
+- Using Docker
+- Container
+- Containers are Stateless ? (bug/feature)
+- Images
+- Docker Volumes
+- Docker Files
+- Some Use-cases
+- DockerHub (analogy github.com)
+
+* Intermediate
+
+- Internals of docker run
+- Making GUI work in docker
+- Making Sound work in docker
+- Docker Compose
+
+ How do I use docker
+
+* Black-Belt
+
+- Let's Write a Toy Docker Implementation
+
+* Foundations
+
+* Linux Architecture I
+
+ ls /
+.code src/ls.txt
+
+What Happens when you type a command @ the $SHELL
+
+- A search in the $PATH variable
+- Stop on the first match found
+- The Type of executeable determined (*file*)
+- Some _insane_ mechanism executes it
+- Return To the $SHELL prompt
+
+* Linux Architecture II
+
+The system (*nix) has two parts
+
+- The user-space (programs, including the $SHELL)
+- The kernel (Actual OS)
+
+Both are essential and cannot exist without each-other
+BUT
+Both are *Plugable/Swapable* !

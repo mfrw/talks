@@ -1,0 +1,4 @@
+bin boot data dev etc home 
+lib proc root sys tmp usr
+
+.. some uninteresting dirs skipped
