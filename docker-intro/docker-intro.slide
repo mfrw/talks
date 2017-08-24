@@ -75,6 +75,28 @@ The system (*nix) has two parts
 - The user-space (programs, including the $SHELL)
 - The kernel (Actual OS)
 
-Both are essential and cannot exist without each-other
+Both are essential and cannot exist* without each-other
 BUT
 Both are *Plugable/Swapable* !
+
+ Hardware is stateless !!
+
+* What makes your Computer Statefull ?
+
+* Linux Architecture III
+
+Normal System
+
+.image images/linux.jpg 450 _
+
+* Linux Architecture IV
+
+Hypervisor Type II (Virtual Box)
+
+.image images/hv.jpg 450 _
+
+* Linux Architecture IV
+
+Docker
+
+.image images/docker.jpg 450 _
