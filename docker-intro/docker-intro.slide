@@ -95,8 +95,32 @@ Hypervisor Type II (Virtual Box)
 
 .image images/hv.jpg 450 _
 
-* Linux Architecture IV
+* Linux Architecture V
 
 Docker
 
 .image images/docker.jpg 450 _
+
+* Chroot
+
+Unix v7 in 1979: *Bill* *Joy*
+
+.code src/chroot.sh
+
+* Sandboxes
+
+.image images/sandbox.jpg
+
+* Using chroot
+
+* Using qemu
+
+- Quick Emulator
+ qemu-system-x86_64 -boot d -cdrom random_os.iso -m 2048M -smp 4 -enable-kvm
+
+- -enable-kvm => Uses features of new CPUs to speed up.
+- -smp        => The number of cores
+- -boot       => boot from hda/dvd etc etc
+- -m          => RAM
+
+
