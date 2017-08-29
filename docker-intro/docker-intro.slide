@@ -6,7 +6,7 @@ https://github.com/mfrw/talks/tree/master/docker-intro
 falak16018@iiitd.ac.in
 
 
-* I assume no prior knowledge whatsoever.
+* I assume no prior knowledge*.
 
 * Agenda
 
@@ -231,7 +231,7 @@ First steps:
 
 * docker run
 
-Interactive usage
+Interactive usage (CTRL-P + CTRL-Q to detach)
 
  docker run -it image-name [command]
  -i => Keep STDIN open even if not attached
@@ -262,3 +262,40 @@ Show running containers:
 Show all containers running and Exited:
 
  docker ps -a
+
+Restart a stopped container
+
+ docker start #hash
+
+Clean all stopped containers:
+
+ docker rm $(docker ps -aq)
+
+* Things to remember
+
+- A container in itself is a full machine (s/w) without kernel
+- A container has its own IP address.
+- Its own networking interface.
+- Is completely* Isolated to the host.
+- You can nuke a container .. 
+
+ rm -rf / 
+
+Ports can be *EXPOSED* from the container to the host. (-p)
+Files can be *SHARED*  to and fro the host and the container. (-v)
+
+* Ports and Files
+
+To expose a port from a container to the host:
+
+ docker run -it -p 8080:80 nginx
+ -p   => Expose ports
+ 8080 => Host Port
+ 80   => Container Port
+
+To share files with a container:
+
+ docker run -it -v /home/$(whoami):/data alpine sh
+ -v              => Bind Mount a Volume
+ /home/$(whoami) => Host Path
+ /data           => Container path
