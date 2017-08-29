@@ -105,13 +105,18 @@ Docker
 
 Unix v7 in 1979: *Bill* *Joy*
 
+- Download *busybox*
+- Compile it ... 
+
 .code src/chroot.sh
+
+- Securit Risk :(
+- No Real Isolation :(
 
 * Sandboxes
 
 .image images/sandbox.jpg
 
-* Using chroot
 
 * Using qemu
 
@@ -123,4 +128,35 @@ Unix v7 in 1979: *Bill* *Joy*
 - -boot       => boot from hda/dvd etc etc
 - -m          => RAM
 
+* Qemu cpu emulator
 
+qemu-system emulates a full system
+
+qemu-arm (qemu-x86, qemu-ppc ...) emulate only the cpu, so you can run commands
+
+ qemu-arm some_random_arm_binary
+
+
+* One last analogy
+
+virtualenv (python)
+
+It changes the shells interpretation of python
+
+- You can always work with weired setups
+- You dont distrub your system
+- Python2/Python3 .. wont give you any pain
+
+.code src/virtualenv.sh
+
+* Docker
+
+Install:
+.link https://docs.docker.com/engine/installation/ https://docs.docker.com/engine/installation
+.code src/postinst.sh
+
+First steps:
+
+ docker container run hello-world
+
+.code src/docker.sh
