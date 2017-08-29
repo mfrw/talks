@@ -13,7 +13,6 @@ falak16018@iiitd.ac.in
 - Part 0: *Foundations*
 - Part I: *Basics*
 - Part II: *Intermediate*
-- Part III: *Black-Belt*
 
 Starting with first principle
 
@@ -35,7 +34,6 @@ Building the Ground
 - Container
 - Containers are Stateless ? (bug/feature)
 - Images
-- Docker Volumes
 - Docker Files
 - Some Use-cases
 - DockerHub (analogy github.com)
@@ -47,11 +45,12 @@ Building the Ground
 - Making Sound work in docker
 - Docker Compose
 
- How do I use docker
 
-* Black-Belt
+* Let's cover 33.33333333 things
 
-- Let's Write a Toy Docker Implementation
+.image images/remember.jpg 450 _
+
+You do the math.
 
 * Foundations
 
@@ -136,6 +135,11 @@ qemu-arm (qemu-x86, qemu-ppc ...) emulate only the cpu, so you can run commands
 
  qemu-arm some_random_arm_binary
 
+* Unrelated Fact (30-Aug "17)
+
+.image images/holymoly.jpg 450 _
+
+Yesterday Acutally .. As if you knew ;)
 
 * One last analogy
 
@@ -299,3 +303,173 @@ To share files with a container:
  -v              => Bind Mount a Volume
  /home/$(whoami) => Host Path
  /data           => Container path
+
+* If You be like
+
+.image images/holyshit.jpg 450 _
+
+Lets run through it again.
+
+* Checklist
+
+- docker run -it img cmd [runs interactivley] CTRL-P + CTRL-Q = detach
+- docker run -d  ... [run in background]
+- docker ps [show running containers]
+- docker ps -a [show all i.e. exited also]
+- docker rm ... [remove stopped containers]
+- docker run ..  -p $HOSTP:$CONTP ... [expose ports]
+- docker run ..  -v $HPATH:$CPATH ... [share files] *Bind* mount 
+
+* Do you  ... ?
+
+.image images/dockermf.jpg 500 _
+
+* Lets go anonymous
+
+ docker run -d -p 9050:9050 -d mfrw/tor
+
+Tor exposes a SOCKS listener @ 9050
+We expose the port from container to our host
+Configure our browser
+
+ -p 9050:9050 => expose container port to 9050 of host
+ -d           => detached execution
+
+- docker ps
+- docker stop ...
+- docker rm ...
+
+Just for demo purpose, it runs an ancient tor version not recommended
+Make your own ;)
+
+* What happens when you install something on the container
+
+- It remains in the container
+- The image is not affected
+- You have to commit the changes and make a new image
+
+ docker commit -t mfrw/tor:v2 #hash
+
+* Dockerfiles
+
+Q: How to create a docker image ?
+A: Simple Use *Dockerfile* or commit a container.
+
+Q: So WTH is a Dockerfile ?
+A: Heard of makefiles.. Something similar
+
+Q: Can I see one ?
+A: The tor one looks like this.
+
+.code dockerfiles/tor/Dockerfile
+
+* Dockerfiles
+
+Q: How do you build an image from a Dockerfile ?
+A: Simple ...
+
+ docker build -t mfrw/tor:latest .
+
+Q: Why should I use it ?
+A: Its the same thing as your docker image, but easier to email ... ;)
+
+Q: Is there a *github* lookalike for docker ?
+A: *dockerhub* ... Signup 
+
+Q: Is this session over.. Im kinda bored/tired
+A: The fun part begins now, we use whatever we learned till now to do some unholy stuff. You can pretty much leave if you want.
+
+* For those who chose to stay
+
+- There is no fun part.. I *lied* ...
+
+.image images/lie.png 500 _
+
+* Dockerfile for busybox
+
+- Remember *Bill* *Joy*... Yeah the *choot* dude.
+- Lets write a Dockerfile for busybox.
+
+.code dockerfiles/busybox/Dockerfile
+
+Building ..
+
+ docker build -t mfrw/busybox .
+
+Running ..
+ 
+ docker run -it mfrw/busybox
+
+* Any goT fans ?
+
+- Lets write a small webserver in *go*
+- Containarize it
+- Host GOTS07E07 over it.
+
+.code dockerfiles/fileserver/Dockerfile
+
+To run it
+
+ docker run -d -p 80:8080 -v $(pwd):/data mfrw/fileserver
+
+* gem5 (Comp-Arch CPU emulator)
+
+.code dockerfiles/gem5/Dockerfile
+
+
+* Languages
+
+node.js
+
+ docker run -it -w /data -v $PWD:/data node
+
+golang
+
+ docker run -it -w /data -v $PWD:/data golang
+
+ruby
+
+ docker run -it -w /data -v $PWD:/data ruby
+
+django
+
+ docker run -it --net=host -w /data -v $PWD:/data django
+
+* How About Google-Chrome ?
+
+.code dockerfiles/chrome/Dockerfile
+
+Dockerfiles can be very messy.
+
+* Google-Chrome
+
+Run it :
+
+.code src/chrome.sh
+
+Add Sound :
+
+.code src/chrome-audio.sh
+
+If it doesn't work, try after running:
+
+ xhost +
+
+* Latex Compiler
+
+.code dockerfiles/latex/latex.sh
+
+* Docker on steroids
+
+Host Full sharelatex.com locally
+In under 5 minutes.
+
+ docker-compose up
+
+* Questions ?
+
+* Feedback
+
+I would be honored if you gave me honest feed back.
+I want to improve this talk.
+I am almost alway happy to answer an question after you first *RTFM*
