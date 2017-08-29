@@ -149,6 +149,34 @@ It changes the shells interpretation of python
 
 .code src/virtualenv.sh
 
+* Buzz Word: Container 
+
+* How does it look like
+
+.image images/container.png 500 _
+
+* Forget Configurations
+
+.image images/build_ship_run.png 500 _
+
+* What is a container
+
+- An isolated environment (similar as a vm)
+- In Linux it is implemented by using cgroups and namespaces
+- NO SUCH THING as a CONTAINER in the kernel
+- Its just a namesake given to an isolated environment.
+- You dont just ship your code, but package the depencies and configuration.
+- No more dependcy hell.
+- Stuff just works magically.
+
+Solves the problem of:
+
+ Works on my machine 
+
+* Why exactly should I care?
+
+.image images/y_should_i_care.png 600 _
+
 * Docker
 
 Install:
@@ -160,3 +188,77 @@ First steps:
  docker container run hello-world
 
 .code src/docker.sh
+
+* What Just happened
+
+.image images/what_just_happend.svg 450 _
+
+* What Just happened
+
+- You did not have the hello-world image so docker downloaded it from a *registry*
+- Using the hello world image, a container was provisioned
+- The code inside the container executed.
+- The code finished, the container exited.
+ Its still lying around unless you explicitly remove it
+- You can restart a stopped container.
+
+* Time for memes
+
+* When you ship code!
+
+.image images/works.jpg 500 _
+
+* Slack time
+
+.image images/slack1.jpg 500 _
+
+* Docker essentials
+
+- docker *ps* (show what containers are running)
+- docker *images* (show your local images)
+- docker *run* (run an image)
+- docker *pull* (get an image from a registry)
+- docker *rm* (remove a stopped container)
+- docker *rmi* (remove an image)
+- docker *exec* (run a command in a running container)
+
+!so essentials:
+
+- docker info
+- docker inspect
+- docker network
+- .....
+
+* docker run
+
+Interactive usage
+
+ docker run -it image-name [command]
+ -i => Keep STDIN open even if not attached
+ -t => Allocate a pseudo-tty
+
+Detached usage
+
+ docker run -d image-name [command]
+ -d => Run container in background and print container ID
+
+Other flags
+ 
+ --cpu-shares   => CPU shares (relative weight)
+ --hostname     => Container host name
+ --memory       => Memory limit
+ -p, --publish  => Publish a container's port(s) to the host
+ -v, --volume   => Bind mount a volume
+ -w, --workdir  => Working directory inside the container
+  
+docker run --help | docker container run --help
+
+* docker ps
+
+Show running containers:
+
+ docker ps
+
+Show all containers running and Exited:
+
+ docker ps -a
