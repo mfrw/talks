@@ -1,0 +1,5 @@
+SOCKSPort 0.0.0.0:9050 # Bind to this address:port too.
+ControlPort 0.0.0.0:9051
+HashedControlPassword 16:6971539E06A0F94C6011414768D85A25949AE1E201BDFE10B27F3B3EBA
+
+DisableDebuggerAttachment 0
