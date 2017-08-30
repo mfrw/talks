@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 FROM scratch
 LABEL maintainer "Muhammad Falak R Wani <falakreyaz@gmail.com>"
 COPY bb-build/bin /bin

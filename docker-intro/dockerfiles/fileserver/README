@@ -1,7 +1,7 @@
 To build static binaries which run anywhere 
 use options:
 
-COG_ENABLED=0 GOOS=linux go build -tags netgo -a -v
+COG_ENABLED=0 GOOS=linux go build -tags netgo -a -v filserver.go
 
 	-a => rebuild already compiled code
 	-v => verbose

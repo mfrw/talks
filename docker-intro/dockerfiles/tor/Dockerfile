@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 FROM alpine:latest
 LABEL maintainer "Muhammad Falak R Wani <falakreyaz@gmail.com>"
 RUN apk --update add tor && adduser -D anon
