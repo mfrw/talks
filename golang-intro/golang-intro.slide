@@ -1,0 +1,72 @@
+golang
+let's go
+
+Muhammad Falak R Wani
+https://github.com/mfrw/talks/tree/master/docker-intro
+mfrw@iiitd.ac.in
+
+
+* Agenda
+
+- A light hearted intro to *golang*
+- I already know python why should I switch
+- Some cool stuff
+- Who is the creator and who uses it.
+
+
+* A tribute to the demo gods
+
+.code src/hello.go
+
+* Why should I swtich
+
+- I already know python so why a new language
+- Cross compiling is as easy as native compiling
+- You Dont write complex makefiles, or have to bend you head for complex build systems
+- The tooling is awsome.
+
+* Who created it
+
+The creators of UNIX
+
+- Ken Thompson (Turing award winner)
+- Rob Pike
+- Russ Cox
+
+Legend has it, Ken and Rob were waiting for a project to compile, they thougth of redesigning a language
+that was modern enough and could tackle the scale at google.
+
+* Structure of a Typical go program
+
+- package
+- imports
+- globla vars
+- funcs
+- * func main
+
+* Is go Object oriented.
+
+- Although you can use it as an object oriented langugage, it is not.
+- It feels like one.
+
+* Let me try to sell go
+
+- Cross compiling
+- Pretty loaded standard library (battries included)
+- All round development, Benchmarking and Testing bundled in the languge
+- Relatively leaner build times
+
+* Some more
+
+- Looks and feels like Python
+- Statically Typed
+- Compiled
+
+* What are use cases of go
+
+- Its typically used a systems langugage
+- People use for web dev too
+- Docker has been written in go.
+
+
+
