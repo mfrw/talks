@@ -7,19 +7,18 @@ func main() {
 	fmt.Println("1+1 = ", 1+1)
 	fmt.Println(true && false)
 
-	var a string = "initial"
+	var a string = "initial" // HL
 	fmt.Println(a)
-	var b, c int = 1, 2
+	var b, c int = 1, 2 // HL
 	fmt.Println(b, c)
-	var d = true
+	var d = true // HL
 	fmt.Println(d)
-	var e int
+	var e int // HL
 	fmt.Println(e)
 	f := "short cut for variable declaration" // HL
 	fmt.Println(f)
 
 	const n = 50000
 	const l = 3e20 / n
-
 	fmt.Println(l)
 }

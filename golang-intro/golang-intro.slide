@@ -16,7 +16,7 @@ mfrw@iiitd.ac.in
 
 * A tribute to the demo gods
 
-.code src/hello.go
+.play -edit src/hello.go
 
 * Why should I swtich
 
@@ -76,4 +76,9 @@ that was modern enough and could tackle the scale at google.
 
 : The short variable declaration only works inside functions
 
+* Loops
+
+There is just one looping construct *for*
+
+.play -edit src/loops.go
 
