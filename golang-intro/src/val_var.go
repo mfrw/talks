@@ -17,4 +17,9 @@ func main() {
 	fmt.Println(e)
 	f := "short cut for variable declaration" // HL
 	fmt.Println(f)
+
+	const n = 50000
+	const l = 3e20 / n
+
+	fmt.Println(l)
 }

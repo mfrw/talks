@@ -70,7 +70,7 @@ that was modern enough and could tackle the scale at google.
 
 * Lets start coding
 
-* Values and Variables
+* Values, Variables & Constants
 
 .play -edit src/val_var.go
 
