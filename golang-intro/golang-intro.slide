@@ -42,7 +42,7 @@ that was modern enough and could tackle the scale at google.
 - imports
 - globla vars
 - funcs
-- * func main
+- func *main*
 
 * Is go Object oriented.
 
@@ -68,5 +68,12 @@ that was modern enough and could tackle the scale at google.
 - People use for web dev too
 - Docker has been written in go.
 
+* Lets start coding
+
+* Values and Variables
+
+.play -edit src/val_var.go
+
+: The short variable declaration only works inside functions
 
 
