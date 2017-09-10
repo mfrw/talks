@@ -82,3 +82,9 @@ There is just one looping construct *for*
 
 .play -edit src/loops.go
 
+* Conditionals
+
+.play -edit src/if-else.go
+
+
+
