@@ -98,4 +98,10 @@ There is just one looping construct *for*
 
 .play -edit src/slice.go
 
+* 2D Slice
+
+.play -edit src/slice2.go
+
+
+
 

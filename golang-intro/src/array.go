@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var a [5]int
+	var a [5]int // HL
 	fmt.Println("emp:", a)
 
 	a[4] = 100
@@ -12,7 +12,7 @@ func main() {
 
 	fmt.Println("len:", len(a))
 
-	var twoD [2][3]int
+	var twoD [2][3]int // HL
 	for i := 0; i < 2; i++ {
 		for j := 0; j < 3; j++ {
 			twoD[i][j] = i + j
