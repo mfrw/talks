@@ -90,5 +90,12 @@ There is just one looping construct *for*
 
 .play -edit src/switch.go
 
+* Arrays
+
+.play -edit src/array.go
+
+* Slices
+
+.play -edit src/slice.go
 
 
