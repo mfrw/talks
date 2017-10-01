@@ -3,7 +3,7 @@ Why should I care ?
 
 Muhammad Falak R Wani
 https://github.com/mfrw/talks/tree/master/docker-intro
-falak16018@iiitd.ac.in
+falakreyaz@gmail.com
 
 
 * I assume no prior knowledge*.
@@ -135,11 +135,6 @@ qemu-arm (qemu-x86, qemu-ppc ...) emulate only the cpu, so you can run commands
 
  qemu-arm some_random_arm_binary
 
-* Unrelated Fact (30-Aug "17)
-
-.image images/holymoly.jpg 450 _
-
-Yesterday Acutally .. As if you knew ;)
 
 * One last analogy
 
@@ -216,13 +211,13 @@ First steps:
 
 * Docker essentials
 
-- docker *ps* (show what containers are running)
+- docker container *ls* (show what containers are running)
 - docker *images* (show your local images)
-- docker *run* (run an image)
+- docker container *run* (run an image)
 - docker *pull* (get an image from a registry)
-- docker *rm* (remove a stopped container)
+- docker container *rm* (remove a stopped container)
 - docker *rmi* (remove an image)
-- docker *exec* (run a command in a running container)
+- docker container *exec* (run a command in a running container)
 
 !so essentials:
 
@@ -235,13 +230,13 @@ First steps:
 
 Interactive usage (CTRL-P + CTRL-Q to detach)
 
- docker run -it image-name [command]
+ docker container run -it image-name [command]
  -i => Keep STDIN open even if not attached
  -t => Allocate a pseudo-tty
 
 Detached usage
 
- docker run -d image-name [command]
+ docker container run -d image-name [command]
  -d => Run container in background and print container ID
 
 Other flags
@@ -255,7 +250,7 @@ Other flags
   
 docker run --help | docker container run --help
 
-* docker ps
+* docker container ls
 
 Show running containers:
 
