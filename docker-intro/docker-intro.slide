@@ -418,11 +418,11 @@ Running ..
  
  docker run -it mfrw/busybox
 
-* Any goT fans ?
+* How about a single binary and nothing else (static binaries)
 
 - Lets write a small webserver in *go*
-- Containarize it
-- Host GOTS07E07 over it.
+- Containarize it.
+- Host a page over it.
 
 .code dockerfiles/fileserver/Dockerfile
 
