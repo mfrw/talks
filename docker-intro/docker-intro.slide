@@ -12,9 +12,10 @@ falakreyaz@gmail.com
 
 - Part 0: *Foundations*
 - Part I: *Basics*
-- Part II: *Intermediate*
 
 Starting with first principle
+
+* Tribute to the demo gods
 
 * Foundations
 
@@ -46,12 +47,11 @@ Building the Ground
 - Some Use-cases
 - DockerHub (analogy github.com)
 
-* Intermediate
+* Fun Stuff
 
-- Internals of docker run
-- Making GUI work in docker
-- Making Sound work in docker
-- Docker Compose
+- Running GUI apps
+- Enabling Sound
+- ....
 
 
 * Let's cover 33.33333333 things
@@ -459,7 +459,6 @@ If it doesn't work, try after running:
 * Feedback
 
 - I would be honored if you gave me honest feedback.
-- I am happy to answer a question after you *RTFM*.
 - If you want more, I almost always reply to emails.
 
 .image images/last.jpg 300 _
