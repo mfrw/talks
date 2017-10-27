@@ -162,6 +162,14 @@ It changes the shells interpretation of python
 
 .image images/container.png 500 _
 
+* How is it implemented ?
+
+- Linux kernel does *not* have containers.
+- Namespaces
+  man 7 namespaces
+- Control Groups
+  man 7 cgroups
+
 * Forget Configurations
 
 .image images/build_ship_run.png 500 _
@@ -258,6 +266,19 @@ Other flags
   
 docker run --help | docker container run --help
 
+* docker diff
+
+- Very Powerfull for learning how something works
+  docker run -it nginx bash
+  create a hello world file
+  exit
+
+- Now I can diff the base image and the container
+  docker diff hash
+
+- The size of the container is just the *diff*
+- COW (Copy on Write)
+
 * docker container ls
 
 Show running containers:
@@ -347,6 +368,8 @@ Make your own ;)
 
 - It remains in the container
 - The image is not affected
+- Check the size *-s*
+- Diff the image with the container
 - You have to commit the changes and make a new image
 
  docker commit -t mfrw/tor:v2 #hash
@@ -378,7 +401,7 @@ Q: Is there a *github* lookalike for docker ?
 A: *dockerhub* ... Signup 
 
 Q: Is this session over.. Im kinda bored/tired
-A: The fun part begins now, we use whatever we learned till.
+A: The fun part begins now, we use whatever we learned till now in fun ways.
 
 * Dockerfile for busybox
 
