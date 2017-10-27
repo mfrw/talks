@@ -477,6 +477,15 @@ If it doesn't work, try after running:
 
 .code dockerfiles/latex/latex.sh
 
+* Micro-services
+
+- In production you never use a single docker container
+- Decouple your application modules
+- Run a container for each
+- Link the containers together
+
+ docker-compose
+
 * Questions ?
 
 * Feedback
