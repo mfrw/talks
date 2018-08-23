@@ -2,8 +2,8 @@ golang
 let's go
 
 Muhammad Falak R Wani
-https://github.com/mfrw/talks/tree/master/docker-intro
-mfrw@iiitd.ac.in
+@iamfrw
+falakreyaz@gmail.com
 
 
 * Agenda
@@ -55,12 +55,14 @@ that was modern enough and could tackle the scale at google.
 - Pretty loaded standard library (battries included)
 - All round development, Benchmarking and Testing bundled in the languge
 - Relatively leaner build times
+- Extensive tooling (more on that latter)
 
 * Some more
 
 - Looks and feels like Python
 - Statically Typed
 - Compiled
+- Simple
 
 * What are use cases of go
 
