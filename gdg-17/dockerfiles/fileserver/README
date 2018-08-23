@@ -1,0 +1,13 @@
+To build static binaries which run anywhere 
+use options:
+
+COG_ENABLED=0 GOOS=linux go build -tags netgo -a -v fileserver.go
+
+	-a => rebuild already compiled code
+	-v => verbose
+
+The downside of this is an ovbious increase in the size of the binary and significant compile time
+
+# To execute inside docker:
+
+docker run -d -p 1234:8080 -v $(pwd):/data mfrw/fileserver
