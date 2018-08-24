@@ -1,0 +1,4 @@
+CGO_ENABLED=0 GOOS=arm64 go build -tags netgo -a -v
+go tool pprof http://localhost:8080/debug/pprof/profile
+http://ph:8080/debug/pprof/
+

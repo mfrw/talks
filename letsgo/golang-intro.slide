@@ -1,0 +1,134 @@
+golang
+Should I go ?
+
+Muhammad Falak R Wani
+https://github.com/mfrw/letsgo
+falakreyaz@gmail.com
+
+
+* Agenda
+
+- Introduction to  go (golang -- searching)
+- Motivation.
+- Basics of go.
+- Some coding.
+
+
+* A tribute to the demo gods
+
+.play -edit src/hello.go
+
+* The boring way:
+
+- I already know *X* (python, java...) so,  why a new language ?
+- What problems does it solve ?
+- Java, Python ... are also platform independent.
+- class complicated implements something_insane
+- How many have seen any standard library code (libc, javalib, libstdc++ ...)?
+
+* tl;dr answers.
+
+* Easy (flat 1 hour) *
+
+* Profiling 
+
+* Tracing
+
+* Concurrency
+
+* Race-detection (bug hunting)
+
+* Testing 
+
+* Benchmarking
+
+* Toolchain
+
+* Who created it
+
+The creators of UNIX*
+
+- Ken Thompson (Turing award winner)
+- Rob Pike
+- Russ Cox
+
+Legend has it, Ken and Rob were waiting for a project to compile.
+
+PS: Due respect for Denis Ritche & Dough McIlory, nonetheless.
+
+* Structure of a Typical go program
+
+- package
+- imports
+- global vars
+- funcs
+- func *main* *
+
+* Is go Object oriented.
+
+- Although you can use it as an object oriented langugage, it is not.
+- It feels like one.
+- It features embedding. (latter)
+
+* Let me try to sell go
+
+- Cross compiling
+- Extensive tooling.
+- Relatively leaner build times.
+- Pretty loaded standard library. (battries included)
+- All round development, Benchmarking and Testing bundled in the languge.
+
+* Some more
+
+- Easy and safe*
+- Statically Typed
+- Compiled
+- Encourages tinkering
+
+* What are use cases of go
+
+- Its typically used a systems language
+- People use for web dev too
+- Docker has been written in go.
+- Apache Kafka, Kubernetes .........
+
+* Lets start coding
+
+* Values, Variables & Constants
+
+.play -edit src/val_var.go
+
+: The short variable declaration only works inside functions
+
+* Loops
+
+There is just one looping construct *for*
+
+.play -edit src/loops.go
+
+* Conditionals
+
+.play -edit src/if-else.go
+
+* Switch
+
+.play -edit src/switch.go
+
+* Arrays
+
+.play -edit src/array.go
+
+* Slices
+
+.play -edit src/slice.go
+
+* 2D Slice
+
+.play -edit src/slice2.go
+
+* Important Stuff
+
+- closures
+- goroutines
+- channels
+- interfaces
