@@ -1,0 +1,93 @@
+Flamegraphs, Tracers...
+
+Muhammad Falak R Wani
+IIIT-D
+@iamfrw
+falakreyaz@gmail.com
+
+* Agenda
+- Profiling
+- Flamegraphs
+- Tracing
+
+* Profiling
+
+Periodic sampling of stack traces.
+
+*pprof*
+
+Go has powerful profiling built into the runtime
+- CPU profiles (stack sampling)
+- Heap profiles using allocation profiling
+- and more (block profiles, traces, etc)
+
+Accessible through *pprof* and *runtime* packages.
+
+Started off as google/gperftools (C++)
+
+* pprof
+
+- Tests/Bechmarks: -cpuprofile & -memprofile flags
+ go test . -bench=. -cpuprofile prof.cpu
+ go tool pprof [binary] prof.cpu
+
+- Manual Instrumentation:
+ runtime.StartCPUProfile & runtime.WriteHeapProfile
+
+- Import: 
+ import _ net/http/pprof (adds /debug/pprof endpoints)
+
+ http.ListenAndServe(":8080", nil) || If you don't have a listener 
+
+ go tool pprof -seconds 5 http://localhost:8080/debug/pprof/profile
+
+
+* Profile Types
+
+.image images/profiles.png _ 1000
+
+
+* Tools
+
+- Native
+ go tool pprof [binary] prof.cpu
+
+- google/pprof
+ go get github.com/google/pprof
+
+The profile is a *gziped* protbuff. So you can write your own tooling around it.
+
+- For more information:
+ runtime/pprof/proto.go
+
+* Flamegraph
+
+- What ?
+.link http://www.brendangregg.com/flamegraphs.html FlameGraph (Brendan Gregg) 
+.link https://queue.acm.org/detail.cfm?id=2927301 ACMQ FlameGraph
+
+- Old way: *go-torch* (UBER)
+ go-torch prof.cpu [generates torch.svg]
+
+- Now: *pprof* 
+.link  https://github.com/google/pprof/pull/188 Flame Graph support on Web UI #188
+
+ pprof -http :8080 [binary] prof.cpu
+
+
+* Tracing
+
+Unlike profiling, trace events exactly. Track down latency issues, poor parallelism etc.
+
+- Direct:
+ import runtime/trace
+ trace.Start & trace.Stop
+
+- Testing:
+ go test -trace ...
+
+- Import:
+ import _ net/http/pprof
+
+It has an intuitive UI (Chrome only)
+
