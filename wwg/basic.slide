@@ -1,0 +1,148 @@
+Should I really GO ?
+This is !tutorial
+
+Muhammad Falak R Wani
+@iamfrw
+falakreyaz@gmail.com
+
+* Agenda
+
+- Introduction to go (golang -- searching)
+- Motivation
+- Basics of go
+- Some coding
+
+* A tribute to the demo gods
+
+.play -edit src/hello.go
+
+* The boring way:
+
+- I already know *X* (python, java...) so, why learn a new language ?
+- What problems does it solve ?
+- Java, Python ... are established, this is a new commer
+- class complicated implements something_more_complicated
+- How many have seen any standard library (libc, javalib, python-lib) ?
+
+* tl;dr answers
+
+* Easy
+
+* Profiling
+
+* Concurrency
+
+* Tracing
+
+* Race-Detection
+
+* Testing
+
+* Benchmarking
+
+* Toolchain
+
+* Cross Compiling
+
+* How did it all start ?
+
+- Ken Thompson (Turing award winner)
+- Rob Pike
+- Russ Cox
+
+Legend has it, Ken and Rob were waiting for a project to compile.
+
+PS: Due respect for Denis Ritche & Dough McIlroy, nonetheless.
+
+* Aside: go compiles quickly
+
+- Why C/C++ compilation is slow ?
+- How does go solve the problem ?
+
+* Structure of a Typical go program
+
+- package
+- imports
+- global vars
+- funcs
+- func *main* *
+
+* Object Oriented ?
+
+- Although it feels like OO it is not.
+- It features embeding. (latter)
+- Interfaces in go are very powerful.
+
+* Let me try to sell go
+
+- Cross compiling
+- Static binaries (helpful in container envs)
+- Relatively leaner build times
+- Battries included
+- All round devlopement, testing, benchmarking ...
+
+* Some more
+
+- Easy and safe *
+- Statically Typed
+- Compiled
+- Encourages tinkering
+
+* Use cases for go
+
+- Used as a systems language
+- Used for a web dev too
+- Docker is written in go
+- Kubernetes is written in go
+- It is a standard langauage for Cloud Native env
+
+* Lets start coding
+
+* Values, Variables & Constatns
+
+.play -edit src/val_var.go
+
+* Loops
+
+Just one looping construct *for*
+
+.play -edit src/loops.go
+
+* Conditionals
+
+.play -edit src/if-else.go
+
+* Switch
+
+.play -edit src/switch.go
+
+* Arrays
+
+.play -edit src/array.go
+
+* Slices
+
+.play -edit src/slice.go
+
+* Map
+
+.play -edit src/map.go
+
+* Defer
+
+.play -edit src/defer.go /START OMIT/,/END OMIT/
+
+* Panic/Recover
+
+.play -edit src/panic.go /START OMIT/,/END OMIT/
+
+* Language features
+
+- closures
+- goroutines
+- channels
+- interfaces
+- embedding
+- struct tags
+- build tags
+- garbage collector
