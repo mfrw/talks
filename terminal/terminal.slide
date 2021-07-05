@@ -1,0 +1,55 @@
+Terminal on steroids.
+or -- "Terminal on drugs!"
+
+Muhammad Falak R Wani
+falakreyaz@gmail.com
+@vimfrw
+
+* Agenda
+
+- Terminal Env
+- Multiplexers
+- Cmdline Prod
+- Demo
+
+* Baseline Setup
+
+- Terminus (Supports ligatures)
+- PuTTY
+- PowerToys
+- chocolatey/winget
+
+* Multiplexers
+
+- tmux
+- screen
+- zellij (oven fresh)
+
+* Cmdline Productivity
+
+* $SHELL
+
+- bash (ohmybash)
+- zsh (ohmyzsh)
+- fish
+
+* Cmdline Productivity
+
+- tldr
+- cheat
+- autojump (z)
+
+* Alt - Tools
+
+- neovim (0.5 out on FriYaY!!! [02-Jul-2021])
+- fzf
+- ripgrep
+- delta
+- dust
+- fd
+- tealdeer
+- exa
+- bat
+- gh
+
+* Demo
