@@ -103,7 +103,3 @@ There is just one looping construct *for*
 * 2D Slice
 
 .play -edit src/slice2.go
-
-
-
-
