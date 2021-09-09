@@ -1,0 +1,24 @@
+eBPF is the in-kernel virtual machine which lets us use the kernel and leverage
+a very safe & efficient programming model where we can extract telemetry data
+from arbitary* points in the kernel as well as supplement certain throughput
+critical parts in a programable way. Although, eBPF was earlier targeted at
+only the network data path, it now has evolved into a framework which can be
+used in almost everywhere in the kernel. Novel usuages include writing TCP
+congestion control algrithms entrirely in userspace and load them to the kernel
+without having to go through a full kernel release cycle. Apart from the
+network stack, there are various adhoc telemetry data that we can extract from
+the kernel which can aid in tackling performance problems without modifying the
+kernel. The advantage of eBPF is its dynamic nature, where we only have the
+overhead whenver we are running a specific adhoc eBPF telemetry program.
+
+This talk is an introduction to the eBPF subsytem from a prespective of a
+non-kernel programmer. The talk will explore ideas similar to eBPF like the
+integration of lua with nginix, web-asm etc. The talk will touch on the
+end-to-end life cycle of an eBPF program, how we write a program in the
+userspace, then compile it to the eBPF VM bytecode and how we load the program
+in the kernel. Once the program is loaded, it still cannot run, unless we
+attach it to any hook/event in the kernel. These events could be a
+tracepoint/kprobe or a perf events. This talk also will touch upon the various
+types of eBPF programs that are possible e.g xdp, monitoring. For completion an
+introduction to eBPF maps (storage) which allow us to make state-full
+descsions.
