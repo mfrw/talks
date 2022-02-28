@@ -1,0 +1,72 @@
+Terminal on steroids!
+or -- "Productivity in the Terminal"
+
+Muhammad Falak R Wani
+mwani@microsoft.com
+@vimfrw
+
+* Agenda
+
+- Terminal Env
+- Multiplexers
+- Cmdline Prod
+- Demo
+
+* Baseline Setup
+
+- Terminal Emulators
+- PuTTY
+- Windows Terminal
+- Tabby (Supports ligatures)
+- PowerToys (* although unrelated ... but cool)
+
+* Multiplexers
+
+- zellij (oven fresh)
+- tmux
+- screen
+
+* Cmdline Productivity
+
+* $SHELL
+
+- bash (ohmybash)
+- zsh (ohmyzsh)
+- fish
+
+
+* I need help!
+
+.image tar.png
+
+* Cmdline Productivity
+
+
+- cheat
+- tldr
+- autojump (z)
+
+* Alt - Tools
+
+- starship
+- git alias'
+- neovim
+- fzf
+- ripgrep
+- delta
+- dust
+- fd
+- tealdeer
+- exa
+- bat
+- gh
+
+* Questions/Comments/Feedback -- Anything
+
+.image graph.png
+
+- Feel free to reach out if anything.
+
+- If folks want me to present about anything else. I would be more than happy to
+
+
